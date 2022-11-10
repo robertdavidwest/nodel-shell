@@ -5,6 +5,7 @@ const date = require("./date");
 const echo = require("./echo");
 const head = require("./head");
 const tail = require("./tail");
+const sort = require("./sort");
 
 const done = (output) => {
   process.stdout.write(output);
