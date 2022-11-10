@@ -1,5 +1,5 @@
-function echo(string) {
-
+function echo(done, string) {
+    done(string);
 }
 
 module.exports = echo;

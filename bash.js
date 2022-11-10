@@ -4,6 +4,7 @@ const cat = require("./cat");
 const date = require("./date");
 const echo = require("./echo");
 const head = require("./head");
+const tail = require("./tail");
 
 const done = (output) => {
   process.stdout.write(output);

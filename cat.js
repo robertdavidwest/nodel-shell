@@ -1,8 +1,7 @@
-const fs = require("fs");
-const head = require("./head");
+const read = require("./read");
 
 function cat(done, filepath) {
-  head(done, filepath, "all");
+  read(done, filepath, "all");
 }
 
 module.exports = cat;
