@@ -15,7 +15,8 @@ process.stdin.on("data", (data) => {
   let cmd = data.toString().trim();
   const inputs = cmd.split(" ");
   cmd = inputs[0];
-  const input = inputs[1];
+  const input1 = inputs[1];
+  const input2 = inputs[2];
   const command = eval(cmd);
-  command(done, input);
+  command(done, input1, input2);
 });

@@ -1,13 +1,8 @@
 const fs = require("fs");
+const head = require("./head");
 
 function cat(done, filepath) {
-  fs.readFile(filepath, "utf-8", function (err, data) {
-    if (err) {
-      done("Something went wrong!");
-    } else {
-      done(data);
-    }
-  });
+  head(done, filepath, "all");
 }
 
 module.exports = cat;
