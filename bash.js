@@ -14,11 +14,7 @@ const done = (output) => {
 
 process.stdout.write("prompt > ");
 process.stdin.on("data", (data) => {
-  let cmd = data.toString().trim();
-  const inputs = cmd.split(" ");
-  cmd = inputs[0];
-  const input1 = inputs[1];
-  const input2 = inputs[2];
-  const command = eval(cmd);
-  command(done, input1, input2);
+  const inputs = data.toString().trim().split(" ");
+  const command = eval(inputs.shift());
+  command(done, ...inputs);
 });
