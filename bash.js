@@ -1,6 +1,9 @@
 const pwd = require("./pwd");
 const ls = require("./ls");
 const cat = require("./cat");
+const date = require("./date");
+const echo = require("./echo");
+const head = require("./head");
 
 const done = (output) => {
   process.stdout.write(output);
@@ -13,14 +16,6 @@ process.stdin.on("data", (data) => {
   const inputs = cmd.split(" ");
   cmd = inputs[0];
   const input = inputs[1];
-
-  if (cmd === "pwd") {
-    pwd(done);
-  }
-  if (cmd === "ls") {
-    ls(done);
-  }
-  if (cmd === "cat") {
-    cat(done, input);
-  }
+  const command = eval(cmd);
+  command(done, input);
 });
